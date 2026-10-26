@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0b0f17;
+    color: #f1f5f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Luxury 5-Star Hotel Print Stylesheet */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  header, 
+  aside, 
+  nav, 
+  button, 
+  .no-print,
+  [role="dialog"] > div:first-child:not([class*="bg-"]) {
+    display: none !important;
+  }
+
+  /* Make modal content take the full page with clean royal styling */
+  .fixed.inset-0 {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .fixed.inset-0 > div {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 24px !important;
+    border-radius: 0 !important;
+  }
+
+  .fixed.inset-0 * {
+    color: #000000 !important;
+    background-color: transparent !important;
+    border-color: #d1d5db !important;
+  }
+
+  .fixed.inset-0 h1,
+  .fixed.inset-0 h2,
+  .fixed.inset-0 h3 {
+    color: #000000 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Ensure text and values are high contrast */
+  .font-mono,
+  .font-bold,
+  .font-semibold {
+    font-weight: 700 !important;
+    color: #000000 !important;
+  }
+
+  /* Add print signature line */
+  .print-signatures {
+    display: flex !important;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #666;
+  }
+}
